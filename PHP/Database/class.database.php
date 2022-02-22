@@ -63,7 +63,7 @@ abstract class db extends PDO {
         }
     }
 
-    private function getData(string $sql, ?int $exceptionCode = NULL, mixed ...$bind) : array | false {
+    protected function getData(string $sql, ?int $exceptionCode = NULL, mixed ...$bind) : array | false {
         try {
             $stmt = $this->prepare($sql);
             $bind = ($bind == array(NULL)) ? NULL : $bind;
