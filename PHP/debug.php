@@ -13,3 +13,5 @@ function debug(mixed $variable, int $type = DEBUG_ALL) : void {
     ($type === DEBUG_SIMPLE) ? print_r($variable) : var_dump($variable) ;
     echo "</pre>";
 }
+
+echo "test";
