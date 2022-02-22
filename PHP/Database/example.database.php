@@ -9,7 +9,7 @@ include "http://raw.githubusercontent.com/ItzJoris03/CodeLibrary/main/PHP/Databa
 class exampleDatabase extends db {
 
     // @Override throwException method due to abstraction
-    private function throwException(PDOException $e, ?int $exceptionCode = NULL, ?string $sql = NULL) : void {
+    public function throwException(PDOException $e, ?int $exceptionCode = NULL, ?string $sql = NULL) : void {
         echo "<p class='warning'>";
         switch ($exceptionCode) {
             case 0: 
