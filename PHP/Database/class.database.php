@@ -63,7 +63,7 @@ abstract class db extends PDO {
         }
     }
 
-    private function getData(string $sql, ?int $fail = NULL, mixed ...$bind) : array | false {
+    private function getData(string $sql, ?int $exceptionCode = NULL, mixed ...$bind) : array | false {
         try {
             $stmt = $this->prepare($sql);
             $bind = ($bind == array(NULL)) ? NULL : $bind;
@@ -72,10 +72,10 @@ abstract class db extends PDO {
             $stmt->closeCursor();
             return $results;
         } catch (PDOException $e) {
-            $this->throwException($e, $fail, $sql);
+            $this->throwException($e, $exceptionCode, $sql);
             return false;
         }
     }
     
-    public abstract function throwException(PDOException $e, ?int $code = NULL, ?string $sql = NULL) : void;
+    public abstract function throwException(PDOException $e, ?int $exceptionCode = NULL, ?string $sql = NULL) : void;
 }
