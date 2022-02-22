@@ -77,5 +77,5 @@ abstract class db extends PDO {
         }
     }
     
-    private abstract function throwException(PDOException $e, ?int $exceptionCode = NULL, ?string $sql = NULL) : void;
+    protected abstract function throwException(PDOException $e, ?int $exceptionCode = NULL, ?string $sql = NULL) : void;
 }
