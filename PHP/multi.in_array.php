@@ -1,4 +1,10 @@
 <?php
+/*
+ * Usefull multidimension in_array() function
+ * Stolen from StackOverflow:
+ *      https://stackoverflow.com/questions/4128323/in-array-and-multidimensional-array
+ */
+
 
 function in_array_r($needle, $haystack, $strict = false) {
     foreach ($haystack as $item) {
